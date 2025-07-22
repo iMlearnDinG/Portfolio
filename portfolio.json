@@ -1,0 +1,36 @@
+{
+    "animation": [
+        {
+            "path": "assets/videos/Video_001.mp4",
+            "title": "Character Motion Capture"
+        },
+        {
+            "path": "assets/videos/Video_002.mp4",
+            "title": "Unity 3D Animation Demo"
+        },
+        {
+            "path": "assets/videos/Video_003.mp4",
+            "title": "Interactive Game Sequence"
+        }
+    ],
+    "artwork": [
+        {
+            "path": "assets/images/Image_001.jpg",
+            "title": "Concept Art for Game Environment"
+        },
+        {
+            "path": "assets/images/Image_002.jpg",
+            "title": "AI Character Design"
+        }
+    ],
+    "llm": [
+        {
+            "path": "assets/documents/Document_001.jpg",
+            "title": "ChatGPT Prompt Guide"
+        },
+        {
+            "path": "assets/documents/Document_002.jpg",
+            "title": "AI Instruction Set"
+        }
+    ]
+}
