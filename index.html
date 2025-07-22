@@ -234,76 +234,15 @@
             <h2>Portfolio</h2>
             <div class="portfolio-category">
                 <h3>Animation</h3>
-                <div class="hero-card" id="animationCards">
-                    <div class="card">
-                        <video controls>
-                            <source src="assets/videos/Video_001.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-content">
-                            <h4>Character Motion Capture</h4>
-                            <p>Animation sample (video)</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <video controls>
-                            <source src="assets/videos/Video_002.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-content">
-                            <h4>Unity 3D Animation Demo</h4>
-                            <p>Animation sample (video)</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <video controls>
-                            <source src="assets/videos/Video_003.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-content">
-                            <h4>Interactive Game Sequence</h4>
-                            <p>Animation sample (video)</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="hero-card" id="animationCards"></div>
             </div>
             <div class="portfolio-category">
                 <h3>Artwork</h3>
-                <div class="hero-card" id="artworkCards">
-                    <div class="card">
-                        <img src="assets/images/Image_001.jpg" alt="Artwork 001">
-                        <div class="card-content">
-                            <h4>Concept Art for Game Environment</h4>
-                            <p>Artwork sample (image)</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/images/Image_002.jpg" alt="Artwork 002">
-                        <div class="card-content">
-                            <h4>AI Character Design</h4>
-                            <p>Artwork sample (image)</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="hero-card" id="artworkCards"></div>
             </div>
             <div class="portfolio-category">
                 <h3>LLM Documentation</h3>
-                <div class="hero-card" id="llmCards">
-                    <div class="card">
-                        <img src="assets/documents/Document_001.jpg" alt="Document 001">
-                        <div class="card-content">
-                            <h4>ChatGPT Prompt Guide</h4>
-                            <p>LLM Documentation sample (image)</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="assets/documents/Document_002.jpg" alt="Document 002">
-                        <div class="card-content">
-                            <h4>AI Instruction Set</h4>
-                            <p>LLM Documentation sample (image)</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="hero-card" id="llmCards"></div>
             </div>
         </div>
 
@@ -385,6 +324,63 @@
                 modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
             }
         });
+
+        // Fetch portfolio.json and render portfolio items
+        fetch('portfolio.json')
+            .then(response => response.json())
+            .then(data => {
+                const categories = {
+                    animation: document.getElementById('animationCards'),
+                    artwork: document.getElementById('artworkCards'),
+                    llm: document.getElementById('llmCards')
+                };
+
+                // Process animation (videos)
+                data.animation.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <video controls>
+                            <source src="${item.path}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card-content">
+                            <h4>${item.title}</h4>
+                            <p>Animation sample (video)</p>
+                        </div>
+                    `;
+                    categories.animation.appendChild(card);
+                });
+
+                // Process artwork (images)
+                data.artwork.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${item.path}" alt="${item.title}">
+                        <div class="card-content">
+                            <h4>${item.title}</h4>
+                            <p>Artwork sample (image)</p>
+                        </div>
+                    `;
+                    categories.artwork.appendChild(card);
+                });
+
+                // Process LLM documentation (images)
+                data.llm.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${item.path}" alt="${item.title}">
+                        <div class="card-content">
+                            <h4>${item.title}</h4>
+                            <p>LLM Documentation sample (image)</p>
+                        </div>
+                    `;
+                    categories.llm.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading portfolio.json:', error));
     </script>
 </body>
 </html>
