@@ -80,19 +80,6 @@
             margin-bottom: 15px;
         }
 
-        .drop-zone {
-            border: 2px dashed #00ff88;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .drop-zone.dragover {
-            background: rgba(0, 255, 136, 0.2);
-        }
-
         .hero-card {
             display: flex;
             flex-wrap: wrap;
@@ -104,7 +91,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            width: 400px; /* Increased card size */
+            width: 400px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -116,7 +103,7 @@
         .card video,
         .card img {
             width: 100%;
-            height: 300px; /* Increased media height */
+            height: 300px;
             object-fit: cover;
         }
 
@@ -247,24 +234,76 @@
             <h2>Portfolio</h2>
             <div class="portfolio-category">
                 <h3>Animation</h3>
-                <div class="drop-zone" id="animationDropZone">
-                    Drag and drop animation samples here (.mp4)
+                <div class="hero-card" id="animationCards">
+                    <div class="card">
+                        <video controls>
+                            <source src="assets/videos/Video_001.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card-content">
+                            <h4>Character Motion Capture</h4>
+                            <p>Animation sample (video)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <video controls>
+                            <source src="assets/videos/Video_002.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card-content">
+                            <h4>Unity 3D Animation Demo</h4>
+                            <p>Animation sample (video)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <video controls>
+                            <source src="assets/videos/Video_003.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card-content">
+                            <h4>Interactive Game Sequence</h4>
+                            <p>Animation sample (video)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-card" id="animationCards"></div>
             </div>
             <div class="portfolio-category">
                 <h3>Artwork</h3>
-                <div class="drop-zone" id="artworkDropZone">
-                    Drag and drop artwork samples here (images)
+                <div class="hero-card" id="artworkCards">
+                    <div class="card">
+                        <img src="assets/images/Image_001.jpg" alt="Artwork 001">
+                        <div class="card-content">
+                            <h4>Concept Art for Game Environment</h4>
+                            <p>Artwork sample (image)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/Image_002.jpg" alt="Artwork 002">
+                        <div class="card-content">
+                            <h4>AI Character Design</h4>
+                            <p>Artwork sample (image)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-card" id="artworkCards"></div>
             </div>
             <div class="portfolio-category">
                 <h3>LLM Documentation</h3>
-                <div class="drop-zone" id="llmDropZone">
-                    Drag and drop LLM documentation samples here (images or .mp4)
+                <div class="hero-card" id="llmCards">
+                    <div class="card">
+                        <img src="assets/documents/Document_001.jpg" alt="Document 001">
+                        <div class="card-content">
+                            <h4>ChatGPT Prompt Guide</h4>
+                            <p>LLM Documentation sample (image)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/documents/Document_002.jpg" alt="Document 002">
+                        <div class="card-content">
+                            <h4>AI Instruction Set</h4>
+                            <p>LLM Documentation sample (image)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-card" id="llmCards"></div>
             </div>
         </div>
 
@@ -279,7 +318,7 @@
                     <li>Updated IT Service Delivery documentation, addressing procedural gaps.</li>
                     <li>Designed CRM request pipeline using Visio for ZenDesk modules.</li>
                     <li>Administered resources via Microsoft Endpoint Manager, OKTA, and Panorama.</li>
-                    <li>Deployed mobile fleet devices using Microsoft Intune.</li>
+                    <li>Deployed mobile fleet devices with Microsoft Intune.</li>
                     <li>Configured SQL Express and Retail Modern POS systems for store deployments.</li>
                     <li>Managed Cisco Meraki and Palo Alto network configurations.</li>
                 </ul>
@@ -345,69 +384,6 @@
                 events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
                 modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
             }
-        });
-
-        // Drag and Drop Functionality for Portfolio Categories
-        const dropZones = {
-            animation: document.getElementById('animationDropZone'),
-            artwork: document.getElementById('artworkDropZone'),
-            llm: document.getElementById('llmDropZone')
-        };
-        const cardContainers = {
-            animation: document.getElementById('animationCards'),
-            artwork: document.getElementById('artworkCards'),
-            llm: document.getElementById('llmCards')
-        };
-
-        Object.keys(dropZones).forEach(category => {
-            const dropZone = dropZones[category];
-            const cardContainer = cardContainers[category];
-
-            dropZone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            });
-
-            dropZone.addEventListener('dragleave', () => {
-                dropZone.classList.remove('dragover');
-            });
-
-            dropZone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('dragover');
-                const files = e.dataTransfer.files;
-                Array.from(files).forEach(file => {
-                    const allowedTypes = category === 'animation' ? ['video/mp4'] : ['image/jpeg', 'image/png'];
-                    if (allowedTypes.includes(file.type)) {
-                        const title = prompt(`Enter a title for this ${category} sample:`, file.name);
-                        if (title === null) return; // Cancelled prompt
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                            const card = document.createElement('div');
-                            card.className = 'card';
-                            let media;
-                            if (file.type.startsWith('image/')) {
-                                media = document.createElement('img');
-                                media.src = event.target.result;
-                            } else {
-                                media = document.createElement('video');
-                                media.src = event.target.result;
-                                media.controls = true;
-                            }
-                            const cardContent = document.createElement('div');
-                            cardContent.className = 'card-content';
-                            cardContent.innerHTML = `
-                                <h4>${title || file.name}</h4>
-                                <p>${category.charAt(0).toUpperCase() + category.slice(1)} sample (${file.type.split('/')[0]})</p>
-                            `;
-                            card.appendChild(media);
-                            card.appendChild(cardContent);
-                            cardContainer.appendChild(card);
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-            });
         });
     </script>
 </body>
