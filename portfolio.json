@@ -19,12 +19,20 @@
     ],
     "artwork": [
         {
-            "path": "assets/images/Image_001.jpg",
-            "title": "Concept Art for Game Environment"
+            "path": "assets/images/Image_001.png",
+            "title": "Concept Title Screen"
         },
         {
-            "path": "assets/images/Image_002.jpg",
-            "title": "AI Character Design"
+            "path": "assets/images/Image_002.png",
+            "title": "Environmental Design (Enchanted)"
+        },
+        {
+            "path": "assets/images/Image_003.png",
+            "title": "Environmental Design (Village)"
+        },
+        {
+            "path": "assets/images/Image_004.png",
+            "title": "Environmental Design (Woodlands)"
         }
     ],
     "llm": [
