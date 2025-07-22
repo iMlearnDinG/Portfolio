@@ -34,12 +34,16 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            text-align: center; /* Center all text within container */
         }
 
         .header {
-            text-align: center;
             padding: 60px 20px;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+        h1, h2, h3, h4 {
+            text-align: center;
         }
 
         .header h1 {
@@ -116,17 +120,13 @@
             color: #ffffff;
         }
 
-        .card-content p {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-top: 10px;
-        }
-
         .skills ul,
         .job ul,
         .qualification ul {
             list-style: none;
             margin-top: 10px;
+            display: inline-block; /* Center lists while keeping text left-aligned */
+            text-align: left;
         }
 
         .skills ul li,
@@ -169,7 +169,6 @@
         }
 
         .footer {
-            text-align: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.5);
             margin-top: 40px;
@@ -208,10 +207,10 @@
             <div class="skills">
                 <h3>Artificial Intelligence & Automation</h3>
                 <ul>
-                    <li>AI Integration: Leveraged AI tools (ChatGPT) since January 2024 for automation, scripting, and interactive systems.</li>
-                    <li>AI Creative Tools: Experience with StableDiffusion, Suno, Kling, Meshy.ai.
+                    <li>AI Integration: Leveraged AI tools (ChatGPT, Character.ai, Inworld) since January 2024 for automation, scripting, and interactive systems.</li>
+                    <li>AI Creative Tools: Experience with StableDiffusion, Suno, Kling, Meshy.ai.</li>
                     <li>Prompt Engineering: Developed instruction sets for AI models, including a ChatGPT helper module with 200+ unique user interactions (https://chatgpt.com/g/g-oybJiMSiQ-fishnet-client-side-prediction-helper).</li>
-                    <li>LLM: Baseline knowledge on Bigram Counting to Self-Attention. Spooled up interanl GPT2 transformer. </li>
+                    <li>LLM: Baseline knowledge on Bigram Counting to Self-Attention. Spooled up internal GPT2 transformer.</li>
                 </ul>
                 <h3>Game Development & 3D Animation</h3>
                 <ul>
