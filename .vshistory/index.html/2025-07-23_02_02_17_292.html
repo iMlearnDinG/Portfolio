@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levi Holmstrom - Creative Technology Specialist Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center; /* Center all text within container */
+        }
+
+        .header {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #00ff88;
+            }
+
+        .portfolio-category {
+            margin-bottom: 30px;
+        }
+
+            .portfolio-category h3 {
+                font-size: 1.5rem;
+                color: #00ff88;
+                margin-bottom: 15px;
+            }
+
+        .hero-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            }
+
+            .card video,
+            .card img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+        .card-content {
+            padding: 15px;
+        }
+
+            .card-content h4 {
+                font-size: 1.5rem;
+                color: #ffffff;
+            }
+
+        .skills ul,
+        .job ul,
+        .qualification ul {
+            list-style: none;
+            margin-top: 10px;
+            display: inline-block; /* Center lists as a block */
+        }
+
+            .skills ul li,
+            .job ul li,
+            .qualification ul li {
+                font-size: 0.95rem;
+                color: #ffffff;
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 20px;
+                text-align: center; /* Ensure list items are centered */
+            }
+
+                .skills ul li:before,
+                .job ul li:before,
+                .qualification ul li:before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: #00ff88;
+                }
+
+        .job,
+        .qualification,
+        .hobby {
+            margin-bottom: 20px;
+        }
+
+            .job h3,
+            .qualification h3 {
+                font-size: 1.5rem;
+                color: #00ff88;
+            }
+
+            .job p,
+            .qualification p,
+            .hobby p {
+                font-size: 1rem;
+                color: #cccccc;
+                margin-top: 5px;
+            }
+
+        .footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 40px;
+        }
+
+            .footer p {
+                font-size: 0.9rem;
+                color: #cccccc;
+            }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Levi Holmstrom</h1>
+            <p>Technology Specialist | AI, Game Development, Web & IT</p>
+        </div>
+
+        <div class="section">
+            <h2>Core Competencies</h2>
+            <div class="skills">
+                <h3>Artificial Intelligence & Automation</h3>
+                <ul>
+                    <li>AI Integration: Leveraged AI tools (ChatGPT, Character.ai, Inworld) since January 2024 for automation, scripting, and interactive systems.</li>
+                    <li>AI Creative Tools: Experience with StableDiffusion, Suno, Kling, Meshy.ai.</li>
+                    <li>Prompt Engineering: Developed instruction sets for AI models, including a ChatGPT helper module with 200+ unique user interactions (https://chatgpt.com/g/g-oybJiMSiQ-fishnet-client-side-prediction-helper).</li>
+                    <li>LLM: Baseline knowledge on Bigram Counting to Self-Attention. Spooled up internal GPT2 transformer.</li><br />
+                </ul>
+                <h3>Game Development & 3D Animation</h3>
+                <ul>
+                    <li>Unity 3D Development: Built interactive applications and networked games using Unity 3D, with expertise in FishNet for client-side prediction and multiplayer functionality.</li>
+                    <li>Motion Capture: Captured and integrated 3D performances using Reallusion software, enhancing character animations for games and simulations.</li><br />
+                </ul>
+                <h3>Software & Web Development</h3>
+                <ul>
+                    <li>Development Environments: Configured robust environments for Python, React, C#/C++, managing dependencies, SDKs, and build pipelines.</li>
+                    <li>Web Server Management: Provisioned and hosted web servers using on-premise and cloud platforms (Cloudflare, Azure, GitHub) for scalable applications.</li><br />
+                </ul>
+                <h3>Networking & System Administration</h3>
+                <ul>
+                    <li>Network Infrastructure: Configured Cisco Meraki and Palo Alto networks, including subnet zoning and access point management.</li>
+                    <li>System Administration: Managed enterprise resources using Microsoft Endpoint Manager, OKTA, Intune, and Panorama for secure access and deployment.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Portfolio</h2>
+            <div class="portfolio-category">
+                <h3>Animation</h3>
+                <div class="hero-card" id="animationCards"></div>
+            </div>
+            <div class="portfolio-category">
+                <h3>Artwork</h3>
+                <div class="hero-card" id="artworkCards"></div>
+            </div>
+            <div class="portfolio-category">
+                <h3>LLM Documentation</h3>
+                <div class="hero-card" id="llmCards"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="job">
+                <h3>Technical Business Analyst / Service Delivery Propagation</h3>
+                <p>Lorna Jane HQ, Brisbane, QLD (6-Month Contract)</p>
+                <ul>
+                    <li>Monitored Microsoft Dynamics AX using PowerShell tools for daily reporting.</li>
+                    <li>Reported data to CIO for NetSuite ERP implementation.</li>
+                    <li>Updated IT Service Delivery documentation, addressing procedural gaps.</li>
+                    <li>Designed CRM request pipeline using Visio for ZenDesk modules.</li>
+                    <li>Administered resources via Microsoft Endpoint Manager, OKTA, and Panorama.</li>
+                    <li>Deployed mobile fleet devices with Microsoft Intune.</li>
+                    <li>Configured SQL Express and Retail Modern POS systems for store deployments.</li>
+                    <li>Managed Cisco Meraki and Palo Alto network configurations.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Previous Roles</h3>
+                <ul>
+                    <li>Windows 10 Roll-out, Multipplex (Jul 2019 - Feb 2020)</li>
+                    <li>L2/L3 Analyst, Beam Surfory (Dec 2017 - Jun 2019)</li>
+                    <li>Senior Desktop Engineer, AIA Insurance (Jan 2017 - Nov 2017)</li>
+                    <li>LHD Project, BAE Systems (Jan 2013 - Nov 2015)</li>
+                    <li>System Administrator, Vekla My U (Apr 2011 - Jan 2013)</li>
+                    <li>System Engineer, Secure Agility (Aug 2009 - Mar 2011)</li>
+                    <li>Jnr Desktop Support, Aus Kitchen Ind (Dec 2008 - Mar 2009)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Qualifications</h2>
+            <div class="qualification">
+                <h3>MCAI - Windows Server 2016</h3>
+                <p>Pearson VUE, Sydney (Completed 2018)</p>
+            </div>
+            <div class="qualification">
+                <h3>Cert IV Networking</h3>
+                <p>Mt Druitt TAFE, NSW (Completed 2012)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies</h2>
+            <div class="hobby">
+                <p>Outdoor Adventure, Music/Entertainment, Technology, Travel, Home Renovation, Investing & Markets</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <p>Available upon request</p>
+        </div>
+
+        <div class="footer">
+            <p>Contact: levi.holmstrom@example.com | © 2025 Levi Holmstrom</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Particle.js Initialization
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ff88' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#00ff88', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: true }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+            }
+        });
+
+        // Fetch portfolio.json and render portfolio items
+        fetch('portfolio.json')
+            .then(response => response.json())
+            .then(data => {
+                const categories = {
+                    animation: document.getElementById('animationCards'),
+                    artwork: document.getElementById('artworkCards'),
+                    llm: document.getElementById('llmCards')
+                };
+
+                // Process animation (videos)
+                data.animation.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                            <video controls>
+                                <source src="${item.path}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="card-content">
+                                <h4>${item.title}</h4>
+                            </div>
+                        `;
+                    categories.animation.appendChild(card);
+                });
+
+                // Process artwork (images)
+                data.artwork.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                            <img src="${item.path}" alt="${item.title}">
+                            <div class="card-content">
+                                <h4>${item.title}</h4>
+                            </div>
+                        `;
+                    categories.artwork.appendChild(card);
+                });
+
+                // Process LLM documentation (images)
+                data.llm.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                            <img src="${item.path}" alt="${item.title}">
+                            <div class="card-content">
+                                <h4>${item.title}</h4>
+                            </div>
+                        `;
+                    categories.llm.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading portfolio.json:', error));
+    </script>
+</body>
+</html>

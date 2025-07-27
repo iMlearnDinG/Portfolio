@@ -1,0 +1,80 @@
+{
+    "generativeAI": {
+        "stableDiffusion": [
+            {
+                "path": "assets/images/stable_diffusion_001.jpg",
+                "title": "AI-Generated Landscape"
+            },
+            {
+                "path": "assets/images/stable_diffusion_002.jpg",
+                "title": "Futuristic Character Concept"
+            }
+        ],
+        "kling": [
+            {
+                "path": "assets/videos/kling_001.mp4",
+                "title": "Kling.ai Animated Scene"
+            },
+            {
+                "path": "assets/videos/kling_002.mp4",
+                "title": "Dynamic Motion Sequence"
+            }
+        ],
+        "suno": [
+            {
+                "path": "assets/audio/suno_001.mp3",
+                "title": "AI-Generated Soundtrack"
+            },
+            {
+                "path": "assets/audio/suno_002.mp3",
+                "title": "Ambient Music Track"
+            }
+        ],
+        "prompts": [
+            {
+                "text": "Create a vibrant cyberpunk cityscape with neon lights and a rainy atmosphere, inspired by Blade Runner.",
+                "title": "Cyberpunk City Prompt"
+            },
+            {
+                "text": "Generate a 3D model of a futuristic robot with intricate mechanical details and a sleek, metallic finish.",
+                "title": "Futuristic Robot Prompt"
+            }
+        ]
+    },
+    "animationCharacter": [
+        {
+            "path": "assets/videos/animation_001.mp4",
+            "title": "Character Motion Capture"
+        },
+        {
+            "path": "assets/videos/animation_002.mp4",
+            "title": "Unity 3D Animation Demo"
+        },
+        {
+            "path": "assets/videos/animation_003.mp4",
+            "title": "Interactive Game Sequence"
+        }
+    ],
+    "environmentalDesign": {
+        "hdrp": [
+            {
+                "path": "assets/images/hdrp_001.jpg",
+                "title": "High-Detail Forest Scene"
+            },
+            {
+                "path": "assets/images/hdrp_002.jpg",
+                "title": "Realistic Urban Environment"
+            }
+        ],
+        "urp": [
+            {
+                "path": "assets/images/urp_001.jpg",
+                "title": "Optimized Desert Landscape"
+            },
+            {
+                "path": "assets/images/urp_002.jpg",
+                "title": "Stylized Village Scene"
+            }
+        ]
+    }
+}

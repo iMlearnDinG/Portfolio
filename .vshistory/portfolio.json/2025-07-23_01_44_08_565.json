@@ -1,0 +1,48 @@
+{
+    "animation": [
+        {
+            "path": "assets/videos/Video_001.mp4",
+            "title": "Character Motion Capture"
+        },
+        {
+            "path": "assets/videos/Video_002.mp4",
+            "title": "Unity 3D Animation Demo"
+        },
+        {
+            "path": "assets/videos/Video_003.mp4",
+            "title": "Interactive Game Sequence"
+        },
+        {
+            "path": "assets/videos/Video_004.mp4",
+            "title": "Toon Motion Capture"
+        }
+    ],
+    "artwork": [
+        {
+            "path": "assets/images/Image_001.png",
+            "title": "Concept Title Screen"
+        },
+        {
+            "path": "assets/images/Image_002.png",
+            "title": "Environmental Design (Enchanted)"
+        },
+        {
+            "path": "assets/images/Image_003.png",
+            "title": "Environmental Design (Village)"
+        },
+        {
+            "path": "assets/images/Image_004.png",
+            "title": "Environmental Design (Woodlands)"
+        }
+    ],
+    "llm": [
+        {
+            "path": "assets/documents/Document_001.jpg",
+            "title": "ChatGPT Prompt Guide"
+        },
+        {
+            "path": "assets/documents/Document_002.jpg",
+            "title": "AI Instruction Set"
+        }
+    ]
+}

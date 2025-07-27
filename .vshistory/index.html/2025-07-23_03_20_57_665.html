@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levi Holmstrom - Creative Technology Specialist Resume</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .network-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: spinNode 8s linear infinite;
+        }
+
+        .line {
+            position: absolute;
+            background: #fff;
+            height: 2px;
+            opacity: 0.3;
+            transform-origin: 0 0;
+            animation: stretchLine 5s ease-in-out infinite;
+        }
+
+        @keyframes spinNode {
+            0% {
+                transform: rotate(0deg) translate(20px);
+            }
+
+            100% {
+                transform: rotate(360deg) translate(20px);
+            }
+        }
+
+        @keyframes stretchLine {
+            0%, 100% {
+                transform: scaleX(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scaleX(1.5);
+                opacity: 0.7;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+            .header h1 {
+                font-size: 4.5rem;
+                font-weight: 700;
+                color: #fff;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                margin-bottom: 15px;
+            }
+
+            .header p {
+                font-size: 1.5rem;
+                color: #ccc;
+                margin-top: 10px;
+            }
+
+        .section {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+            .section h2 {
+                font-size: 3rem;
+                margin-bottom: 30px;
+                color: #fff;
+            }
+
+        .content-row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            flex-wrap: nowrap;
+        }
+
+        .sidebar {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            flex-shrink: 0;
+            min-height: 500px;
+        }
+
+            .sidebar h3 {
+                font-size: 3rem;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            .sidebar button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                background: #1a1a1a;
+                border: 1px solid #222;
+                color: #fff;
+                text-align: left;
+                font-size: 0.9rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+                .sidebar button:hover {
+                    border-color: #fff;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+                }
+
+                .sidebar button.active {
+                    background: #333;
+                    border-color: #fff;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                }
+
+            .sidebar p {
+                font-size: 0.8rem;
+                color: #ccc;
+                margin-top: 5px;
+            }
+
+        .main-content {
+            flex-grow: 1;
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 20px;
+            transition: opacity 0.5s ease;
+            overflow: auto;
+            min-height: 500px;
+        }
+
+            .main-content.fade {
+                opacity: 0;
+            }
+
+        .skills {
+            max-height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+            .skills h3 {
+                font-size: 1.2rem;
+                color: #fff;
+                margin-bottom: 20px;
+                font-weight: 800;
+            }
+
+        .carousel-container {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+            .carousel-container h4 {
+                font-size: 2rem;
+                color: #fff;
+                margin: 20px 0;
+            }
+
+        .swiper {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            transition: all 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-3px);
+                border-color: #fff;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            }
+
+            .card video,
+            .card img {
+                width: 100%;
+                height: auto;
+                max-height: 675px;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+            }
+
+            .card audio {
+                width: 100%;
+                padding: 20px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .card .text-content {
+                width: 100%;
+                max-height: 675px;
+                overflow-y: auto;
+                padding: 20px;
+                font-size: 1rem;
+                color: #ccc;
+                text-align: left;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+        .card-content {
+            padding: 20px;
+        }
+
+            .card-content h4 {
+                font-size: 0.5rem;
+                color: #fff;
+            }
+
+        .skills ul,
+        .job ul,
+        .qualification ul {
+            list-style: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+            .skills ul li,
+            .job ul li,
+            .qualification ul li {
+                font-size: 1rem;
+                color: #fff;
+                margin-bottom: 10px;
+                position: relative;
+                padding-left: 20px;
+                text-align: center;
+            }
+
+                .skills ul li:before,
+                .job ul li:before,
+                .qualification ul li:before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: #fff;
+                }
+
+        .job,
+        .qualification,
+        .hobby {
+            margin-bottom: 20px;
+        }
+
+            .job h3,
+            .qualification h3 {
+                font-size: 1.8rem;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+
+            .job p,
+            .qualification p,
+            .hobby p {
+                font-size: 1rem;
+                color: #ccc;
+                margin-top: 5px;
+            }
+
+        .footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 60px;
+            border-top: 1px solid #222;
+        }
+
+            .footer p {
+                font-size: 0.9rem;
+                color: #ccc;
+            }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .content-row {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+                min-height: auto;
+            }
+
+            .main-content {
+                min-height: auto;
+            }
+
+            .carousel-container h4 {
+                font-size: 1.5rem;
+            }
+
+            .skills h3 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+                .card video,
+                .card img,
+                .card .text-content {
+                    width: 100%;
+                    height: auto;
+                    max-height: none;
+                    aspect-ratio: 16 / 9;
+                }
+
+                .card audio {
+                    padding: 10px;
+                }
+        }
+    </style>
+</head>
+<body>
+    <div class="network-grid">
+        <div class="node" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+        <div class="node" style="top: 20%; left: 70%; animation-delay: 0.5s;"></div>
+        <div class="node" style="top: 35%; left: 25%; animation-delay: 1s;"></div>
+        <div class="node" style="top: 50%; left: 80%; animation-delay: 1.5s;"></div>
+        <div class="node" style="top: 65%; left: 40%; animation-delay: 2s;"></div>
+        <div class="node" style="top: 80%; left: 60%; animation-delay: 2.5s;"></div>
+        <div class="node" style="top: 25%; left: 90%; animation-delay: 3s;"></div>
+        <div class="node" style="top: 75%; left: 20%; animation-delay: 3.5s;"></div>
+        <div class="line" style="top: 10%; left: 15%; width: 100px; transform: rotate(30deg); animation-delay: 0s;"></div>
+        <div class="line" style="top: 20%; left: 70%; width: 80px; transform: rotate(-45deg); animation-delay: 0.5s;"></div>
+        <div class="line" style="top: 35%; left: 25%; width: 120px; transform: rotate(60deg); animation-delay: 1s;"></div>
+        <div class="line" style="top: 50%; left: 80%; width: 90px; transform: rotate(15deg); animation-delay: 1.5s;"></div>
+        <div class="line" style="top: 65%; left: 40%; width: 110px; transform: rotate(-30deg); animation-delay: 2s;"></div>
+        <div class="line" style="top: 80%; left: 60%; width: 70px; transform: rotate(75deg); animation-delay: 2.5s;"></div>
+        <div class="line" style="top: 25%; left: 90%; width: 85px; transform: rotate(-60deg); animation-delay: 3s;"></div>
+        <div class="line" style="top: 75%; left: 20%; width: 95px; transform: rotate(45deg); animation-delay: 3.5s;"></div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Levi Holmstrom</h1>
+            <p>Technology Specialist | AI, Game Development, Web & IT</p>
+        </div>
+
+        <div class="section">
+            <h2>Core Competencies</h2>
+            <div class="content-row">
+                <div class="sidebar">
+                    <h3>Portfolio</h3>
+                    <button data-category="skills">Skills Overview</button>
+                    <p>Core technical competencies</p>
+                    <button data-category="stableDiffusion">Stable Diffusion</button>
+                    <p>Generated 50+ AI images</p>
+                    <button data-category="kling">Kling.ai</button>
+                    <p>10+ AI video projects</p>
+                    <button data-category="suno">Suno</button>
+                    <p>Created 20+ audio tracks</p>
+                    <button data-category="prompts">Creative Prompts</button>
+                    <p>100+ AI prompt designs</p>
+                    <button data-category="animation">Animation & Character</button>
+                    <p>3+ years in character animation</p>
+                    <button data-category="hdrp">Unity HDRP</button>
+                    <p>High-fidelity environments</p>
+                    <button data-category="urp">Unity URP</button>
+                    <p>Optimized game scenes</p>
+                </div>
+                <div class="main-content" id="mainContent">
+                    <div class="skills">
+                        <h3>Artificial Intelligence & Automation</h3>
+                        <ul>
+                            <li>AI Integration: Leveraged AI tools (ChatGPT, Character.ai, Inworld) since January 2024 for automation, scripting, and interactive systems.</li>
+                            <li>AI Creative Tools: Experience with StableDiffusion, Suno, Kling, Meshy.ai.</li>
+                            <li>Prompt Engineering: Developed instruction sets for AI models, including a ChatGPT helper module with 200+ unique user interactions (https://chatgpt.com/g/g-oybJiMSiQ-fishnet-client-side-prediction-helper).</li>
+                            <li>LLM: Baseline knowledge on Bigram Counting to Self-Attention. Spooled up internal GPT2 transformer.</li>
+                        </ul>
+                        <h3>Game Development & 3D Animation</h3>
+                        <ul>
+                            <li>Unity 3D Development: Built interactive applications and networked games using Unity 3D, with expertise in FishNet for client-side prediction and multiplayer functionality.</li>
+                            <li>Motion Capture: Captured and integrated 3D performances using Reallusion software, enhancing character animations for games and simulations.</li>
+                        </ul>
+                        <h3>Software & Web Development</h3>
+                        <ul>
+                            <li>Development Environments: Configured robust environments for Python, React, C#/C++, managing dependencies, SDKs, and build pipelines.</li>
+                            <li>Web Server Management: Provisioned and hosted web servers using on-premise and cloud platforms (Cloudflare, Azure, GitHub) for scalable applications.</li>
+                        </ul>
+                        <h3>Networking & System Administration</h3>
+                        <ul>
+                            <li>Network Infrastructure: Configured Cisco Meraki and Palo Alto networks, including subnet zoning and access point management.</li>
+                            <li>System Administration: Managed enterprise resources using Microsoft Endpoint Manager, OKTA, Intune, and Panorama for secure access and deployment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="job">
+                <h3>Technical Business Analyst / Service Delivery Propagation</h3>
+                <p>Lorna Jane HQ, Brisbane, QLD (6-Month Contract)</p>
+                <ul>
+                    <li>Monitored Microsoft Dynamics AX using PowerShell tools for daily reporting.</li>
+                    <li>Reported data to CIO for NetSuite ERP implementation.</li>
+                    <li>Updated IT Service Delivery documentation, addressing procedural gaps.</li>
+                    <li>Designed CRM request pipeline using Visio for ZenDesk modules.</li>
+                    <li>Administered resources via Microsoft Endpoint Manager, OKTA, and Panorama.</li>
+                    <li>Deployed mobile fleet devices with Microsoft Intune.</li>
+                    <li>Configured SQL Express and Retail Modern POS systems for store deployments.</li>
+                    <li>Managed Cisco Meraki and Palo Alto network configurations.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Previous Roles</h3>
+                <ul>
+                    <li>Windows 10 Roll-out, Multipplex (Jul 2019 - Feb 2020)</li>
+                    <li>L2/L3 Analyst, Beam Surfory (Dec 2017 - Jun 2019)</li>
+                    <li>Senior Desktop Engineer, AIA Insurance (Jan 2017 - Nov 2017)</li>
+                    <li>LHD Project, BAE Systems (Jan 2013 - Nov 2015)</li>
+                    <li>System Administrator, Vekla My U (Apr 2011 - Jan 2013)</li>
+                    <li>System Engineer, Secure Agility (Aug 2009 - Mar 2011)</li>
+                    <li>Jnr Desktop Support, Aus Kitchen Ind (Dec 2008 - Mar 2009)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Qualifications</h2>
+            <div class="qualification">
+                <h3>MCAI - Windows Server 2016</h3>
+                <p>Pearson VUE, Sydney (Completed 2018)</p>
+            </div>
+            <div class="qualification">
+                <h3>Cert IV Networking</h3>
+                <p>Mt Druitt TAFE, NSW (Completed 2012)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies</h2>
+            <div class="hobby">
+                <p>Outdoor Adventure, Music/Entertainment, Technology, Travel, Home Renovation, Investing & Markets</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <p>Available upon request</p>
+        </div>
+
+        <div class="footer">
+            <p>Contact: <a href="mailto:levi.holmstrom@example.com" class="text-gray-400 hover:text-white">levi.holmstrom@example.com</a> | © 2025 Levi Holmstrom</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Fetch portfolio.json and initialize content
+        fetch('portfolio.json')
+            .then(response => response.json())
+            .then(data => {
+                const mainContent = document.getElementById('mainContent');
+                const buttons = document.querySelectorAll('.sidebar button');
+
+                // Store portfolio content for each category
+                const contentMap = {
+                    skills: mainContent.innerHTML,
+                    stableDiffusion: `
+                            <div class="carousel-container">
+                                <h4>Stable Diffusion Examples</h4>
+                                <div class="swiper stable-diffusion-carousel">
+                                    <div class="swiper-wrapper" id="stableDiffusionCards">
+                                        ${data.generativeAI.stableDiffusion.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <img src="${item.path}" alt="${item.title}">
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    kling: `
+                            <div class="carousel-container">
+                                <h4>Kling.ai Examples</h4>
+                                <div class="swiper kling-carousel">
+                                    <div class="swiper-wrapper" id="klingCards">
+                                        ${data.generativeAI.kling.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <video controls>
+                                                        <source src="${item.path}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    suno: `
+                            <div class="carousel-container">
+                                <h4>Suno Examples</h4>
+                                <div class="swiper suno-carousel">
+                                    <div class="swiper-wrapper" id="sunoCards">
+                                        ${data.generativeAI.suno.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <audio controls>
+                                                        <source src="${item.path}" type="audio/mpeg">
+                                                        Your browser does not support the audio tag.
+                                                    </audio>
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    prompts: `
+                            <div class="carousel-container">
+                                <h4>Creative Prompt Examples</h4>
+                                <div class="swiper prompts-carousel">
+                                    <div class="swiper-wrapper" id="promptsCards">
+                                        ${data.generativeAI.prompts.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <div class="text-content">${item.text}</div>
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    animation: `
+                            <div class="carousel-container">
+                                <h4>Animation & Character</h4>
+                                <div class="swiper animation-carousel">
+                                    <div class="swiper-wrapper" id="animationCards">
+                                        ${data.animationCharacter.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <video controls>
+                                                        <source src="${item.path}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    hdrp: `
+                            <div class="carousel-container">
+                                <h4>Unity HDRP</h4>
+                                <div class="swiper hdrp-carousel">
+                                    <div class="swiper-wrapper" id="hdrpCards">
+                                        ${data.environmentalDesign.hdrp.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <img src="${item.path}" alt="${item.title}">
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `,
+                    urp: `
+                            <div class="carousel-container">
+                                <h4>Unity URP</h4>
+                                <div class="swiper urp-carousel">
+                                    <div class="swiper-wrapper" id="urpCards">
+                                        ${data.environmentalDesign.urp.map(item => `
+                                            <div class="swiper-slide">
+                                                <div class="card">
+                                                    <img src="${item.path}" alt="${item.title}">
+                                                    <div class="card-content">
+                                                        <h4>${item.title}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        `
+                };
+
+                // Initialize Swiper for a given carousel
+                function initializeSwiper(carouselClass) {
+                    return new Swiper(`.${carouselClass}`, {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev'
+                        }
+                    });
+                }
+
+                // Handle button clicks with fade transition
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        buttons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        mainContent.classList.add('fade');
+                        setTimeout(() => {
+                            mainContent.innerHTML = contentMap[button.dataset.category];
+                            mainContent.classList.remove('fade');
+
+                            // Initialize Swiper if the content is a carousel
+                            if (button.dataset.category !== 'skills') {
+                                initializeSwiper(`${button.dataset.category}-carousel`);
+                            }
+                        }, 500);
+                    });
+                });
+
+                // Set initial active button
+                document.querySelector('button[data-category="skills"]').classList.add('active');
+            })
+            .catch(error => console.error('Error loading portfolio.json:', error));
+    </script>
+</body>
+</html>

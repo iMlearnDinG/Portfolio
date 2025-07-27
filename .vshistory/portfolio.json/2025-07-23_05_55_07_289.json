@@ -1,0 +1,95 @@
+{
+    "generativeAI": {
+        "stableDiffusion": [
+            {
+                "path": "assets/images/stable_diffusion_001.jpg",
+                "title": "AI-Generated Landscape",
+                "description": "A photorealistic landscape generated using Stable Diffusion, featuring rolling hills and a vibrant sunset, optimized for high-resolution game assets."
+            },
+            {
+                "path": "assets/images/stable_diffusion_002.jpg",
+                "title": "Futuristic Character Concept",
+                "description": "A cyberpunk-inspired character design created with Stable Diffusion, showcasing intricate armor details and neon lighting effects."
+            }
+        ],
+        "kling": [
+            {
+                "path": "assets/videos/kling_001.mp4",
+                "title": "Kling.ai Animated Scene",
+                "description": "An 8-second cinematic sequence generated with Kling.ai, depicting a futuristic cityscape with dynamic camera movement and realistic lighting."
+            },
+            {
+                "path": "assets/videos/kling_002.mp4",
+                "title": "Dynamic Motion Sequence",
+                "description": "A high-energy motion sequence created using Kling.ai, featuring a robotic character in a sci-fi environment with fluid animations."
+            }
+        ],
+        "suno": [
+            {
+                "path": "assets/audio/suno_001.mp3",
+                "title": "Urban Hip-hop [Female]",
+                "description": "Original Lyrics Written by: Levi Holmstrom"
+            },
+            {
+                "path": "assets/audio/suno_002.mp3",
+                "title": "Modern Rock [Male]",
+                "description": "Original Lyrics Written by: Levi Holmstrom"
+            }
+        ],
+        "prompts": [
+            {
+                "text": "Generate an 8-second cinematic video with super high-fidelity visual effects, prioritizing photorealistic rendering. Apply advanced post-processing: depth of field (shallow, f/2.8 for close-ups, f/8 for wide shots), bloom (subtle glow around light sources), chromatic aberration (minimal, realistic edge fringing), subsurface scattering (for organic textures like skin or translucent materials), contact shadows (crisp, high-resolution), refraction (accurate for glass or liquids), screen space shadows (soft, dynamic), global illumination (natural light bounce), ray tracing (realistic reflections and lighting), color correction (cinematic grading, balanced tones), white balance (natural, scene-appropriate), ambient occlusion (deep, detailed shading), and HDR (vivid dynamic range). Ensure hyper-realistic textures, smooth animations, and consistent lighting. Render in 4K, 24fps, with a 2.35:1 aspect ratio. Negative prompts: blurry, low resolution, cartoonish, pixelated, oversaturated, unrealistic lighting, distorted textures, unnatural motion, low poly, surreal, exaggerated proportions.",
+                "title": "High-Fidelity Visual Effects Prompt for AI Video Generation",
+                "description": "A detailed prompt designed to produce a cinematic video with advanced visual effects, optimized for photorealistic rendering in a high-tech setting."
+            },
+            {
+                "text": "An 8-second cinematic shot in the same dark, futuristic corridor with exotic flesh walls (sinewy, veined, pulsating, morphed with glowing circuits, consistent with Shot 5). The focus shifts to a cluster of sleek quantum computer terminals (futuristic, metallic, with embedded glowing circuits) integrated into the flesh walls. From 0-3s, the terminals are dormant with black screens, reflecting faint neon glows. At 3s, the screens activate, displaying scrolling green code and dynamic holographic data visualizations (graphs, 3D models) that illuminate the corridor. The camera uses a 35mm prime lens for a natural perspective and performs a slow zoom-in from a medium shot to a close-up of one terminal’s screen. Lighting is low-key, with pulsating red/green/blue glows from the walls, enhanced by the terminals’ green code and holographic blue light. Subtle fog and faint neon reflections maintain the eerie mood. Ensure realistic terminal textures, smooth code animations, and consistent cyberpunk-alien aesthetic. Render in 4K, 24fps, with a 2.35:1 aspect ratio.",
+                "title": "Quantum Computer Terminal Activation",
+                "description": "A precise prompt for a cinematic shot featuring quantum computer terminals in a cyberpunk-alien corridor, emphasizing realistic textures and dynamic lighting."
+            }
+        ]
+    },
+    "animationCharacter": [
+        {
+            "path": "assets/videos/video_001.mp4",
+            "title": "Character Motion Capture",
+            "description": "A motion-captured character performance using Reallusion software, integrated into a Unity game for realistic movement and expressions."
+        },
+        {
+            "path": "assets/videos/video_002.mp4",
+            "title": "Unity 3D Animation Demo",
+            "description": "A demo showcasing a fully animated character in Unity 3D, with smooth transitions and physics-based interactions."
+        },
+        {
+            "path": "assets/videos/video_003.mp4",
+            "title": "Interactive Game Sequence",
+            "description": "An interactive game sequence featuring a character with networked animations using FishNet, optimized for multiplayer gameplay."
+        }
+    ],
+    "environmentalDesign": {
+        "hdrp": [
+            {
+                "path": "assets/images/hdrp_001.png",
+                "title": "High-Detail Forest Scene",
+                "description": "A photorealistic forest environment built in Unity HDRP, featuring advanced lighting, volumetric fog, and detailed foliage."
+            },
+            {
+                "path": "assets/images/hdrp_002.png",
+                "title": "Realistic Urban Environment",
+                "description": "A detailed urban scene created in Unity HDRP, with ray-traced reflections and dynamic lighting for a lifelike cityscape."
+            }
+        ],
+        "urp": [
+            {
+                "path": "assets/images/urp_001.png",
+                "title": "Optimized Desert Landscape",
+                "description": "A performance-optimized desert environment in Unity URP, designed for mobile platforms with stylized textures and lighting."
+            },
+            {
+                "path": "assets/images/urp_002.png",
+                "title": "Stylized Village Scene",
+                "description": "A charming village scene crafted in Unity URP, featuring vibrant colors and efficient rendering for real-time applications."
+            }
+        ]
+    }
+}

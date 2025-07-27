@@ -1,0 +1,81 @@
+{
+    "generativeAI": {
+        "stableDiffusion": [
+            {
+                "path": "assets/images/stable_diffusion_001.jpg",
+                "title": "AI-Generated Landscape"
+            },
+            {
+                "path": "assets/images/stable_diffusion_002.jpg",
+                "title": "Futuristic Character Concept"
+            }
+        ],
+        "kling": [
+            {
+                "path": "assets/videos/kling_001.mp4",
+                "title": "Kling.ai Animated Scene"
+            },
+            {
+                "path": "assets/videos/kling_002.mp4",
+                "title": "Dynamic Motion Sequence"
+            }
+        ],
+        "suno": [
+            {
+                "path": "assets/audio/suno_001.mp3",
+                "title": "AI-Generated Soundtrack"
+            },
+            {
+                "path": "assets/audio/suno_002.mp3",
+                "title": "Ambient Music Track"
+            }
+        ],
+        "prompts": [
+            {
+                "text": "Generate an 8-second cinematic video with super high-fidelity visual effects, prioritizing photorealistic rendering.",\n
+                "text": "Apply advanced post-processing: depth of field (shallow, f/2.8 for close-ups, f/8 for wide shots), bloom (subtle glow around light sources), chromatic aberration (minimal, realistic edge fringing), subsurface scattering (for organic textures like skin or translucent materials), contact shadows (crisp, high-resolution), refraction (accurate for glass or liquids), screen space shadows (soft, dynamic), global illumination (natural light bounce), ray tracing (realistic reflections and lighting), color correction (cinematic grading, balanced tones), white balance (natural, scene-appropriate), ambient occlusion (deep, detailed shading), and HDR (vivid dynamic range). Ensure hyper-realistic textures, smooth animations, and consistent lighting. Render in 4K, 24fps, with a 2.35:1 aspect ratio. Negative prompts: blurry, low resolution, cartoonish, pixelated, oversaturated, unrealistic lighting, distorted textures, unnatural motion, low poly, surreal, exaggerated proportions.",
+                "title": "High-Fidelity Visual Effects Prompt for AI Video Generation"
+            },
+            {
+                "text": "An 8-second cinematic shot in the same dark, futuristic corridor with exotic flesh walls (sinewy, veined, pulsating, morphed with glowing circuits, consistent with Shot 5). The focus shifts to a cluster of sleek quantum computer terminals (futuristic, metallic, with embedded glowing circuits) integrated into the flesh walls. From 0-3s, the terminals are dormant with black screens, reflecting faint neon glows. At 3s, the screens activate, displaying scrolling green code and dynamic holographic data visualizations (graphs, 3D models) that illuminate the corridor. The camera uses a 35mm prime lens for a natural perspective and performs a slow zoom-in from a medium shot to a close-up of one terminal’s screen. Lighting is low-key, with pulsating red/green/blue glows from the walls, enhanced by the terminals’ green code and holographic blue light. Subtle fog and faint neon reflections maintain the eerie mood. Ensure realistic terminal textures, smooth code animations, and consistent cyberpunk-alien aesthetic. Render in 4K, 24fps, with a 2.35:1 aspect ratio.",
+                "title": "Quantum Computer Terminal Activation"
+            }
+        ]
+    },
+    "animationCharacter": [
+        {
+            "path": "assets/videos/animation_001.mp4",
+            "title": "Character Motion Capture"
+        },
+        {
+            "path": "assets/videos/animation_002.mp4",
+            "title": "Unity 3D Animation Demo"
+        },
+        {
+            "path": "assets/videos/animation_003.mp4",
+            "title": "Interactive Game Sequence"
+        }
+    ],
+    "environmentalDesign": {
+        "hdrp": [
+            {
+                "path": "assets/images/hdrp_001.jpg",
+                "title": "High-Detail Forest Scene"
+            },
+            {
+                "path": "assets/images/hdrp_002.jpg",
+                "title": "Realistic Urban Environment"
+            }
+        ],
+        "urp": [
+            {
+                "path": "assets/images/urp_001.jpg",
+                "title": "Optimized Desert Landscape"
+            },
+            {
+                "path": "assets/images/urp_002.jpg",
+                "title": "Stylized Village Scene"
+            }
+        ]
+    }
+}
